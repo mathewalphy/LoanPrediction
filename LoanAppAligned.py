@@ -5,7 +5,7 @@ import numpy as np
 
 
 st.title("Loan Prediction APP")
-img = Image.open("./stremlitexercises/loan3.jpeg")
+img = Image.open("./loan3.jpeg")
 st.image(img)
 st.write("""The Loan Prediction Web Application is a web-based tool that predicts loan approval based on user input. It utilizes a machine learning model to provide an estimated outcome for loan applications. This project aims to assist individuals and 
          financial institutions in making informed decisions regarding loan approvals.""")
@@ -41,7 +41,7 @@ inputdata = [gender,married,dependents,education,employed,applicantincome,coappl
 
 print(inputdata)
 def predictLoan (inputdata):
-    model = pickle.load(open('/home/dell/pythonDA/Practicals/models/loanmodel.pkl','rb'))
+    model = pickle.load(open('./loanmodel.pkl','rb'))
     input_data_arr = np.array(inputdata).reshape(1,-1)
     loanstatus = model.predict(input_data_arr)
     if loanstatus == 1:
